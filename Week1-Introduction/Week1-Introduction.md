@@ -6,7 +6,7 @@
 
 ##  Set up your work folder on Greene
 - ssh into greene: `ssh netid@greene.hpc.nyu.edu` on campus or using the VPN, or you can access the terminal by using `https://ood.hpc.nyu.edu`
-- set up a link to your personal class folder by running `ln -s /scratch/work/courses/CHEM-GA-2671-2023fa/students/$USER $HOME/comp-lab-class`
+- set up a link to your personal class folder by running `ln -s /scratch/work/courses/CHEM-GA-2671-2024fa/students/$USER $HOME/comp-lab-class`
 - Now you can always get to your personal folder when you log in by typing `cd ~/comp-lab-class`
 - Run the following command to set up the class python environment: `bash /scratch/work/courses/CHEM-GA-2671-2024fa/jupyter-setup/install_kernel.sh`, now this should be available when you start jupyter notebooks from ood
 
