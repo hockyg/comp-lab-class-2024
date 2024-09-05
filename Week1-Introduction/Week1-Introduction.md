@@ -15,10 +15,19 @@
 - Command line text editing - I suggest you learn to use the program VIM. The best tutorial is the built in one, which you can get by just typing vimvtutor on greene
 
 ## Git tutorial
-Now that you know a bit about the command line, do a git tutorial so that you are ready to use it starting next week
+Now that you know a bit about the command line, 
 
-Follow the first part of this git tutorial to learn the basic commands, up until the part about github, which we can discuss in class next time
-https://www.w3schools.com/git/default.asp
+Follow this tutorial (https://www.w3schools.com/git/default.asp?remote=github) 
+
+From the first lesson through `branch merge` in a fresh directory.
+
+## Homework, due next week
+
+1) Send your github url to the TA via slack
+2) Fill out the course survey
+3) Within your copy of the comp-lab-class-2024 git repository, create the folder `Week1-Introduction/AboutMe`
+4) Create a new file `AboutMe/AboutMe.txt` and add some piece of information about yourself such as where you went to college and what you majored in.
+5) Use git to add and commit this file and then push it to your personal github
 
 ## Extra - some programming practice:
 If you've never programmed, learn a little python. A decent tutorial to follow might be https://www.w3schools.com/python/python_intro.asp from beginning to Arrays; to get regular python on greene run the command `module load python/intel/3.8.6`
