@@ -3,6 +3,8 @@
 ## Getting github set up
 - Get GitHub student developer pack working
 - Fork this github repository to your own repository by clicking "fork" and following the instructions
+- Create a personal access token using these instructions (https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) - selecting the top box so that it can read and write repositories, and make sure it expires after this class ends
+- Keep a copy of this token, for example, message it to yourself in Slack. This will be your password for Github submissions
 
 ##  Set up your work folder on Greene
 - ssh into greene: `ssh netid@greene.hpc.nyu.edu` on campus or using the VPN, or you can access the terminal by using `https://ood.hpc.nyu.edu`
