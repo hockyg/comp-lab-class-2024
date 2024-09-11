@@ -1,8 +1,10 @@
-1) Reminder - Learn to use and set up your git repository (should be done)
--	https://www.w3schools.com/git/default.asp?remote=github (from home to branch merge)
--	In your class directory, run `git clone https://github.com/YOURGITHUBID/comp-lab-class-2024`
+1) Sync the latest class github changes to your github. Use git pull in your comp-lab-class-2024 directory on greene to get the data for this week
 
-3) Use vmd to visualize the structure of ubiquitin, and the simulation of beta amyloid. These files are in the Data folder, you figure out which is which based on the file names.
+2) Use vmd to visualize the structure of ubiquitin, and the simulation of beta amyloid. These files are in the Data folder, you figure out which is which based on the file names.
+	- This will be facilitated by the VMD tutorial - https://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/
+	- Look at 'Working with a Single Molecule' and 'Trajectories and Movie Making'
+
+3) Do a small python tutorial as needed, e.g. https://education.molssi.org/python_scripting_cms/ 
 
 4) Make a jupyter notebook that 
 	a) reads in the data file Data/1hz3_T310.run.25000000.energy.xvg
