@@ -17,7 +17,7 @@ Do this tutorial on a compute node. The steps of file preparation etc could be d
 
 To get an interactive node, you can type something like this:
 
-`srun --cpus-per-task 1 --tasks-per-node 1 --mem 8GB –t 4:00:00 --pty /bin/bash`
+`srun --cpus-per-task 1 --tasks-per-node 1 --mem 8GB -t 4:00:00 --pty /bin/bash`
 
 Which, once it starts, will give you a compute node for four hours, with 8 gigabytpes of RAM and 4 CPUs.
 
