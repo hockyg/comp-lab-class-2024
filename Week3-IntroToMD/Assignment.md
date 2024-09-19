@@ -2,7 +2,7 @@
 
 ## Setup reminder ##
 - First, get the latest changes synchronized to your Github
-- Then, run `git pull' in your github folder on greene (use the terminal app)
+- Then, run `git pull` in your github folder on greene (use the terminal app)
 - At the end, you will organize your results in the folder `Week3-IntroToMD` using the provided folders
 
 ## Using gromacs on Greene ##
@@ -26,20 +26,21 @@ When we do even more serious simulations, we need to use SBATCH scripts, where y
 
 ## Week 3 assignment ##
 
-Do the Lysozyme tutorial for Gromacs on HPC, adapting as needed
-http://www.mdtutorials.com/gmx/lysozyme/index.html
+1) Do the Lysozyme tutorial for Gromacs on HPC, adapting as needed. http://www.mdtutorials.com/gmx/lysozyme/index.html
+- *For the whole tutorial, make the plots in one Jupyter notebook using matplotlib like last week.*
+- Instead of using the file names in the tutorial, use good file naming practice (i.e. not em.gro but t4lysozyme_setup_energymin.gro)
+- At the end, *run a 50 ns MD simulation*, and then make a trajectory and gro file without water as described in the Analysis step.
+- Here the molecule will be wrapped in the box and left without solvent (check in VMD),  Render an image of the protein and put it in the Images folder using VMD. 
 
-Instead of using the file names in the tutorial, try to give good file names rather than just e.g. em.gro
-
-At the end, run a 50 ns MD simulation, and then make a trajectory and gro file without water with the molecule wrapped in the box (check in VMD)
-
-Make all the plots in the tutorial within a Jupyter notebook.
-
-Organize your results as follows
+2) Organize your results as follows
 - Input: Put the inputs from the tutorial here in an organized way
 - Setup: Put the setup steps of your work here
 - Data: Put your 50ns trajectory without water here. Also put all the files you would need to run again here.
 - Analysis: Put jupyter notebooks for analyzing the trajectory here
 - Figures: Save you figures here
 
-Edit the README.md files in each folder to explain what you have done and what the files in those directories mean.
+3) Edit the README.md files in each folder to explain what you have done and what the files in those directories mean.
+
+4) Add these files to your project with `git add`. *do not* do `git add .` or `git add FOLDER` without checking that there are no large files. The raw simulation files will be too big for github and this will mess up your whole github repo. That is why you should only put the trajectory without water in the Data folder.
+
+5) Commit and push these files to your github page.
