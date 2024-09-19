@@ -17,25 +17,39 @@ Do this tutorial on a compute node. The steps of file preparation etc could be d
 
 To get an interactive node, you can type something like this:
 
-`srun --cpus-per-task 4 --mem 8GB –t 4:00:00 --pty /bin/bash`
+`srun --cpus-per-task 1 --tasks-per-node 1 --mem 8GB –t 4:00:00 --pty /bin/bash`
 
 Which, once it starts, will give you a compute node for four hours, with 8 gigabytpes of RAM and 4 CPUs.
 
-When we do even more serious simulations, we need to use SBATCH scripts, where you will set up a set of commands and submit those commands to the queue. There is an example in this week's lecture, and you can also now read the page https://sites.google.com/nyu.edu/nyu-hpc/training-support/tutorials/slurm-tutorial
+For the final simulation for this exercise, you may need to do it using an SBATCH script so that it can run overnight (and for bigger simulations you could request more than 1 CPU, but trp-cage below is small)
+
+ In an SBATCH Script you will set up a set of commands and submit those commands to the queue. There is an example in this week's lecture, and you can also now read the page https://sites.google.com/nyu.edu/nyu-hpc/training-support/tutorials/slurm-tutorial
 
 
 ## Week 3 assignment ##
 
 1) Do the Lysozyme tutorial for Gromacs on HPC, adapting as needed. http://www.mdtutorials.com/gmx/lysozyme/index.html
+- *HOWEVER*, do not use lysozyme but rather the smaller protein trp-cage, pdb ID 2JOF
+- For the first step of `pdb2gmx` you will have to add the flag `-ignh` as explained at the bottom of the page for NMR structures
 - *For the whole tutorial, make the plots in one Jupyter notebook using matplotlib like last week.*
-- Instead of using the file names in the tutorial, use good file naming practice (i.e. not em.gro but t4lysozyme_setup_energymin.gro)
-- At the end, *run a 50 ns MD simulation*, and then make a trajectory and gro file without water as described in the Analysis step.
+- If it says to 'use/get an mdp file', you can download that directly to the cluster using the `wget` command by typing `wget URL`
+- Instead of using the file names in the tutorial, use good file naming practice (i.e. not em.gro but t4lysozyme_setup_energymin.gro). You can set this with the `-deffnm` flag, and then adjust subsequent commands. Or alternatively, rename files after using `mv`  
+- At the end, *run a 10 nanosecond MD simulation*, (note this is much longer than the tutorial) and then make a trajectory and gro file without water as described in the Analysis step.
 - Here the molecule will be wrapped in the box and left without solvent (check in VMD),  Render an image of the protein and put it in the Images folder using VMD. 
+- Also note, you can do your analysis while the simulation is running.
+- While simulations are running, you can also read (https://livecomsjournal.org/index.php/livecoms/article/view/v1i1e5957)
+
+### Note on timing ### 
+- Minimization should take seconds
+- 100 ps NVT equilibration step should take about 4-5 minutes
+- 100 ps NPT equilibration step should take about 4-5 minutes
+- 10 ns NPT production run should take about 8 hours on 1 CPU
+
 
 2) Organize your results as follows
 - Input: Put the inputs from the tutorial here in an organized way
 - Setup: Put the setup steps of your work here
-- Data: Put your 50ns trajectory without water here. Also put all the files you would need to run again here.
+- Data: Put your 10ns trajectory without water here. Also put all the files you would need to run again here.
 - Analysis: Put jupyter notebooks for analyzing the trajectory here
 - Figures: Save you figures here
 
