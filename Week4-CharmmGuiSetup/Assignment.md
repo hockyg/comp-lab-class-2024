@@ -11,8 +11,9 @@ CHARMM-GUI Solution Builder - https://charmm-gui.org/?doc=input/solution
 4. Untar the file (look up if you don't know how) to get a folder. I suggest you rename this folder to have the protein name and forcefield in it;  go into that folder and then into the directory `./gromacs`
 5. Read the README file in the GROMACS folder and try to understand what it does; note that this is a C-shell script not a bash script
 6. Copy my README.bash script from the Scripts directory to this Gromacs directory as the script `run_setup.sbatch`. Compare my script to the one from CHARMM-GUI, do you see what the differences are? 
-7. Modify production `step5_production.mdp` to run for 10 ns, so that the run script does 100 total ns
-8. At the top of `run_setup.sbatch`, add sbatch options for running this job on 20 tasks-per-node and 1 cpu-per-task for 24 hours (equilibration should be done within 5 minutes, in total it should take about 12 hours to run all of production)
+7. Modify production `step5_production.mdp` to run for 10 ns, so that the run script does 50 total ns (look through the script and see why)
+8. At the top of `run_setup.sbatch`, add sbatch options for running this job on 24 tasks-per-node and 1 cpu-per-task for 6 hours (equilibration should be done within 5 minutes, in total it should take about 5.5 hours to run all of production)
+	- *note* jobs take longer to start when you request more resources. To make sure your script is working, you can request e.g. 4 cores for 30 minutes, then cancel with `scancel` once you confirm the jobs are starting and running well. 
 9. Once all simulations are done, concatenate the trajectories, wrap the protein, and remove the solvent.
 To concatenate the system, you can use gromac's trjcat utility.
 To wrap the protein, and remove the solvent, you should use gromacs's trjconv utility. A good example for the wrapping part is here: https://adkgromacstutorial.readthedocs.io/en/latest/visualization.html ; To get only the protein written out, you would have to select protein rather than the whole system.
@@ -24,7 +25,7 @@ To wrap the protein, and remove the solvent, you should use gromacs's trjconv ut
 3. Transfer and untar in Setup again, making sure to name your directories well
 4. Modify the `step5_production.mdp` to write out snapshots, velocities, and forces every 10 ps (figure out which options these are)
 5. Copy `run_setup.sbatch` from the first project, and change it to run on 10 cpus for 4 hours (it should take < 3); submit (wow everything else is the same!)
-6. Concatenate the trajectories and this time, unwrap using the ' trjconv -pbc nojump ' option of gromacs. If you open in VMD, you will see the molecules seem to spread out!
+6. Concatenate the trajectories and this time, unwrap using the 'trjconv -pbc nojump ' option of gromacs. If you open in VMD, you will see the molecules seem to spread out!
 7. In a jupyter notebook, compute the mean squared displacement for the Water Oxygens, the Sodium, and the Oxygen using mdtraj or MDAnalysis (you don't have to wait for the simulation to finish to start working on this)
 8. Plot the MSD vs time of all 3 on the same plot in a jupyter notebook in the Analysis folder, and save in the Figures folder
 
