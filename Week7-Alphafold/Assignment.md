@@ -29,7 +29,7 @@ Lab steps:
 0. While waiting for one of the later parts, make sure you know everything in the VMD tutorial from "Working with a Single Molecule" through "Working with Multiple Molecules", `https://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/`
 
 1. Studying an important viral protein:
-- This page has the structure and sequence of SARS-Cov-2 Helicase NSP 13, however it is an unbound form
+- [This page](https://www.rcsb.org/structure/6ZSL) has the structure and sequence of SARS-Cov-2 Helicase NSP 13, however it is an unbound form
 - Use the alphafold server to predict the structure of bound to the RNA sequence UUUUUUUU, and include 1 ATP molecule
 - Use VMD to superimpose one of the bound predictions from AF3 with the crystal structure. Color the RNA, AF3 prediction, and PDB structure differently. Put an image of this in your Images folder
 - Use VMD to load all 5 cif predictions and show all of them on top of each other, aligned. Color by BETA aka the plDDT score. Save an image in the Images folder
